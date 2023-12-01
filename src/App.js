@@ -10,12 +10,12 @@ export default function App() {
   // fetching hotcoffee list
   const gethotcoffee = async () => {
     try {
-      const resp = await fetch("https://api.sampleapis.com/coffee/hothjjh");
+      const resp = await fetch("https://api.sampleapis.com/coffee/hot");
       const json = await resp.json();
       console.log("-----hotcoffee-------json", json);
       sethotcoffee(json);
     } catch (err) {
-      sethotcoffee({ sorry: "Some Server Errror" });
+      // sethotcoffee({ sorry: "Some Server Errror" });
       // alert("Something Error Happened, try after sometime");
       console.log("Hot Cofee Api failed-------", err);
     }
@@ -61,10 +61,7 @@ export default function App() {
   return (
     <pre>
       {hotcoffee?.map((e) => (
-        <>
-          <span>{e.title}</span>
-          <br />
-        </>
+        <CardComponent {...e} />
       ))}
       {/* {JSON.stringify(hotcoffee, null, 2)}
       {JSON.stringify(wine, null, 2)}
@@ -73,3 +70,16 @@ export default function App() {
     </pre>
   );
 }
+
+const CardComponent = (props) => {
+  const { title, description, image } = props;
+  return (
+    <div className="mydiv" style={{ marginBottom: 10 }}>
+      <img className="image" width={100} height={100} src={image}></img>
+      <span class="title">{title}</span>
+      <br />
+      <span>{description}</span>
+      <br />
+    </div>
+  );
+};
