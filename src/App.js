@@ -15,7 +15,8 @@ export default function App() {
       console.log("-----hotcoffee-------json", json);
       sethotcoffee(json);
     } catch (err) {
-      alert("Something Error Happened, try after sometime");
+      sethotcoffee({ sorry: "Some Server Errror" });
+      // alert("Something Error Happened, try after sometime");
       console.log("Hot Cofee Api failed-------", err);
     }
   };
