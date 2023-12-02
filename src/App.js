@@ -62,10 +62,10 @@ export default function App() {
   };
 
   useEffect(() => {
-    getWine();
+    // getWine();
     getBeer();
-    getHotcoffee();
-    getGames();
+    //getHotcoffee();
+    //getGames();
   }, []);
 
   console.log(
@@ -83,8 +83,11 @@ export default function App() {
       {wine?.map((e) => (
         <WineComponent {...e} />
       ))}
-      {beer?.map((e) => (
+      {/* {beer?.map((e) => (
         <BeerComponent {...e} />
+      ))} */}
+      {beer?.map((e) => (
+        <BeerComponent name={e.name} price={e.price} image={e.image} />
       ))}
       {games?.map((e) => (
         <GamesComponent {...e} />
