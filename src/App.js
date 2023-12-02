@@ -83,20 +83,12 @@ export default function App() {
       {wine?.map((e) => (
         <WineComponent {...e} />
       ))}
-      {/* {beer?.map((e) => (
-        <BeerComponent {...e} />
-      ))} */}
       {beer?.map((e) => (
         <BeerComponent name={e.name} price={e.price} image={e.image} />
       ))}
       {games?.map((e) => (
         <GamesComponent {...e} />
       ))}
-
-      {/* {JSON.stringify(hotCoffee, null, 2)}
-      {JSON.stringify(wine, null, 2)}
-      {JSON.stringify(beer, null, 2)}
-      {JSON.stringify(games, null, 2)} */}
     </div>
   );
 }
