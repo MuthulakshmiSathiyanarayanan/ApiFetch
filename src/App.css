@@ -37,3 +37,35 @@
     transform: rotate(360deg);
   }
 }
+
+.mydiv {
+
+  box-sizing: border-box;
+  flex-wrap: column;
+}
+
+.title {
+  font-size: 1%large;
+  font-style: italic;
+
+}
+
+.description {
+  background-color: whitesmoke;
+  width: 300px;
+  height: 300px;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+
+
+
+.image {
+  /*flex-basis: 150px;*/
+  max-height: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  min-width: 100px;
+}

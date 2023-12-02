@@ -2,20 +2,20 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 export default function App() {
-  const [hotcoffee, sethotcoffee] = useState([]);
+  const [hotCoffee, sethotCoffee] = useState([]);
   const [wine, setwine] = useState(" ");
   const [beer, setbeer] = useState(" ");
   const [games, setgames] = useState("");
 
-  // fetching hotcoffee list
+  // fetching hotCoffee list
   const gethotcoffee = async () => {
     try {
       const resp = await fetch("https://api.sampleapis.com/coffee/hot");
       const json = await resp.json();
-      console.log("-----hotcoffee-------json", json);
-      sethotcoffee(json);
+      console.log("-----hotCoffee-------json", json);
+      sethotCoffee(json);
     } catch (err) {
-      // sethotcoffee({ sorry: "Some Server Errror" });
+      // sethotCoffee({ sorry: "Some Server Errror" });
       // alert("Something Error Happened, try after sometime");
       console.log("Hot Cofee Api failed-------", err);
     }
@@ -53,17 +53,17 @@ export default function App() {
   }, []);
 
   console.log(
-    "-----------hotcoffee--------------",
-    hotcoffee.length,
-    typeof hotcoffee
+    "-----------hotCoffee--------------",
+    hotCoffee.length,
+    typeof hotCoffee
   );
 
   return (
     <pre>
-      {hotcoffee?.map((e) => (
+      {hotCoffee?.map((e) => (
         <CardComponent {...e} />
       ))}
-      {/* {JSON.stringify(hotcoffee, null, 2)}
+      {/* {JSON.stringify(hotCoffee, null, 2)}
       {JSON.stringify(wine, null, 2)}
       {JSON.stringify(beer, null, 2)}
       {JSON.stringify(games, null, 2)} */}
@@ -74,12 +74,10 @@ export default function App() {
 const CardComponent = (props) => {
   const { title, description, image } = props;
   return (
-    <div className="mydiv" style={{ marginBottom: 10 }}>
-      <img className="image" width={100} height={100} src={image}></img>
-      <span class="title">{title}</span>
-      <br />
-      <span>{description}</span>
-      <br />
+    <div className="mydiv" style={{ marginRight: 100 }}>
+      <img className="image" src={image}></img>
+      <span className="title">{title}</span>
+      <span className="description"> {description}</span>
     </div>
   );
 };
