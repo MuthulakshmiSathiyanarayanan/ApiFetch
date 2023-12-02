@@ -38,27 +38,29 @@
   }
 }
 
-.mydiv {
-
+.container {
+  background-color: #61dafb;
   box-sizing: border-box;
-  flex-wrap: column;
+
+
 }
 
-.title {
+/* .productName {
   font-size: 1%large;
   font-style: italic;
 
-}
+} */
 
-.description {
+/* .description {
   background-color: whitesmoke;
-  width: 300px;
+  width: 100px;
   height: 300px;
+   white-space: normal; 
+  overflow-wrap: w;
   flex-direction: column;
   padding: 10px;
-  word-wrap: break-word;
-}
-
+  margin-left: 100px;
+} */
 
 
 
