@@ -63,8 +63,8 @@ export default function App() {
 
   useEffect(() => {
     // getWine();
-    getBeer();
-    //getHotcoffee();
+    // getBeer();
+    getHotcoffee();
     //getGames();
   }, []);
 
@@ -76,7 +76,7 @@ export default function App() {
   console.log();
 
   return (
-    <pre>
+    <div className="hotCoffeeContainer">
       {hotCoffee?.map((e) => (
         <HotCoffeeComponent {...e} />
       ))}
@@ -97,19 +97,21 @@ export default function App() {
       {JSON.stringify(wine, null, 2)}
       {JSON.stringify(beer, null, 2)}
       {JSON.stringify(games, null, 2)} */}
-    </pre>
+    </div>
   );
 }
 
 const HotCoffeeComponent = (props) => {
   const { title, description, image } = props;
   return (
-    <div className="container" style={{ marginRight: 100 }}>
+    <div className="container" style={{ marginLeft: 10, marginRight: 10 }}>
       <img className="image" src={image}></img>
+      <br />
+
       <span className="productName" style={{ fontSize: "large" }}>
         {title}
       </span>
-      <span className="description"> {description}</span>
+      {/* <span className="description"> {description}</span> */}
     </div>
   );
 };
