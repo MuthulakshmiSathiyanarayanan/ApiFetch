@@ -1,29 +1,24 @@
 import { Link } from "react-router-dom";
-const routingParameter = [
-  { path: "/", DisplayName: "Home" },
-  { path: "/coffee", DisplayName: "HotCoffee" },
-  { path: "/wine", DisplayName: "Wine" },
-  { path: "/beer", DisplayName: "Beer" },
-  { path: "/games", DisplayName: "Games" },
-];
+import routingParameter from "../common/json/menu.json";
 
 export default function Header() {
+  console.log("---RoutParameter", routingParameter);
   return (
     <nav>
       {routingParameter?.map((parameter) => (
         <RouterComponent
           path={parameter.path}
-          Display={parameter.DisplayName}
+          display={parameter.displayName}
         />
       ))}
     </nav>
   );
 }
 const RouterComponent = (props) => {
-  const { path, Display } = props;
+  const { path, display } = props;
   return (
     <>
-      <Link to={path}>{Display} </Link>
+      <Link to={path}>{display} </Link>
       <br />
     </>
   );
