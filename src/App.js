@@ -1,11 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import HotCoffeeComponent from "./pages/hotCoffee";
-import BeerComponent from "./pages/beer";
-import WineComponent from "./pages/wine";
-import GamesComponent from "./pages/games";
 
-export default function App() {
+/* export default function App() {
   const [hotCoffee, setHotCoffee] = useState([]);
   const [wine, setWine] = useState([]);
   const [beer, setBeer] = useState([]);
@@ -94,5 +90,5 @@ export default function App() {
         <GamesComponent {...e} />
       ))}
     </div>
-  );
-}
+  ); 
+}*/
