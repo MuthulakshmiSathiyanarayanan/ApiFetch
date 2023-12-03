@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "../App.css";
+import BeerComponent from "../components/beerComponent";
+
 export default function BeerApp() {
   const [beer, setBeer] = useState([]);
 
@@ -28,12 +30,3 @@ export default function BeerApp() {
     </div>
   );
 }
-const BeerComponent = (props) => {
-  const { name, price, image } = props;
-  return (
-    <div className="mydiv" style={{ marginBottom: 100 }}>
-      <img className="image" src={image}></img>
-      <span className="productName">{name}</span>
-    </div>
-  );
-};

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 import GamesComponent from "../components/gamesComponent";
+
 export default function GamesApp() {
   const [games, setGames] = useState([]);
 
