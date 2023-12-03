@@ -46,8 +46,8 @@
 }
 
 .hotCoffeeContainer {
-  background-color: #bcd3d8;
-
+  background-color: #b2c6cb;
+  margin-left: 3%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

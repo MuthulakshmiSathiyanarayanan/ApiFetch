@@ -1,6 +1,9 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import HotCoffeeComponent from "./pages/hotCoffee";
+import BeerComponent from "./pages/beer";
+import WineComponent from "./pages/wine";
+import GamesComponent from "./pages/games";
 
 export default function App() {
   const [hotCoffee, setHotCoffee] = useState([]);
@@ -63,10 +66,10 @@ export default function App() {
   };
 
   useEffect(() => {
-    // getWine();
-    // getBeer();
+    getWine();
+    getBeer();
     getHotcoffee();
-    //getGames();
+    getGames();
   }, []);
 
   console.log(
@@ -93,36 +96,3 @@ export default function App() {
     </div>
   );
 }
-
-const WineComponent = (props) => {
-  const { winery, location, image } = props;
-  return (
-    <div className="mydiv" style={{ marginBottom: 100 }}>
-      <img className="image" src={image}></img>
-      <span className="productName">{winery}</span>
-      <span> {location}</span>
-    </div>
-  );
-};
-const BeerComponent = (props) => {
-  const { name, price, image } = props;
-  return (
-    <div className="mydiv" style={{ marginBottom: 100 }}>
-      <img className="image" src={image}></img>
-      <span className="productName">{name}</span>
-      <span> {price}</span>
-    </div>
-  );
-};
-const GamesComponent = (props) => {
-  const { id, genre, name } = props;
-  return (
-    <div className="mydiv">
-      <>{id}</>
-      <span className="productName">{name}</span>{" "}
-      {genre?.map((e) => (
-        <span>{e}</span>
-      ))}
-    </div>
-  );
-};

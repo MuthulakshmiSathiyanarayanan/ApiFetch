@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../App.css";
-import App from "../App";
+//import App from "../App";
 
 const HotCoffeeComponent = (props) => {
   const { title, description, image } = props;
