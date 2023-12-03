@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../App.css";
-
+import WineComponent from "../components/wineComponent";
 export default function WineApp() {
   const [wine, setWine] = useState([]);
 
@@ -28,14 +28,3 @@ export default function WineApp() {
     </div>
   );
 }
-
-const WineComponent = (props) => {
-  const { winery, location, image } = props;
-  return (
-    <div className="mydiv" style={{ marginBottom: 100 }}>
-      <img className="image" src={image}></img>
-      <span className="productName">{winery}</span>
-      {/* <span> {location}</span> */}
-    </div>
-  );
-};

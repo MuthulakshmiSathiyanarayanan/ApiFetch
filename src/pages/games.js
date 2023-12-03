@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../App.css";
-
+import GamesComponent from "../components/gamesComponent";
 export default function GamesApp() {
   const [games, setGames] = useState([]);
 
@@ -31,16 +31,3 @@ export default function GamesApp() {
     </div>
   );
 }
-
-const GamesComponent = (props) => {
-  const { id, genre, name } = props;
-  return (
-    <div className="mydiv">
-      <>{id}</>
-      <span className="productName">{name}</span>{" "}
-      {genre?.map((e) => (
-        <span>{e}</span>
-      ))}
-    </div>
-  );
-};

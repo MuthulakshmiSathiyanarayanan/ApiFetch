@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 //import App from "../App";
+import HotCoffeeComponent from "../components/hotCoffeeComponent";
+
 export default function HotCoffeeApp() {
   const [hotCoffee, setHotCoffee] = useState([]);
 
@@ -39,16 +41,3 @@ export default function HotCoffeeApp() {
     </div>
   );
 }
-const HotCoffeeComponent = (props) => {
-  const { title, description, image } = props;
-  return (
-    <div className="container" style={{ marginLeft: 10, marginRight: 10 }}>
-      <img className="image" src={image}></img>
-      <br />
-      <span className="productName" style={{ fontSize: "large" }}>
-        {title}
-      </span>
-      {/* <span className="description"> {description}</span> */}
-    </div>
-  );
-};
