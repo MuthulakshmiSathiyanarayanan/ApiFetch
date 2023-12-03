@@ -84,13 +84,39 @@
 .image {
   padding-bottom: 5%;
   padding-top: 5%;
-  /* padding-right: 5%;
-  padding-left: 5%; */
   max-height: 180px;
   max-width: 200px;
   min-height: 180px;
   min-width: 200px;
-  background-color: #aebec2;
+  background-color: #aec0c2;
+  border-radius: 20px;
+  margin-top: 15%;
+}
+
+.beerImage {
+  padding-bottom: 5%;
+  padding-top: 5%;
+  /* padding-right: 5%;
+  padding-left: 5%; */
+  max-height: 180px;
+  max-width: 150px;
+  min-height: 180px;
+  min-width: 150px;
+  background-color: rgb(35, 33, 33);
+  border-radius: 20px;
+  margin-top: 15%;
+}
+
+.wineImage {
+  padding-bottom: 5%;
+  padding-top: 5%;
+  /* padding-right: 5%;
+padding-left: 5%; */
+  max-height: 180px;
+  max-width: 100px;
+  min-height: 180px;
+  min-width: 100px;
+  background-color: #749962;
   border-radius: 20px;
   margin-top: 15%;
 }
