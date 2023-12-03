@@ -38,12 +38,12 @@
   }
 }
 
-.container {
+/* .container {
 
-  /* box-sizing: border-box; */
-  /* width: 1000px; */
+   box-sizing: border-box; 
+   width: 1000px; 
 
-}
+} */
 
 .BeverageContainer {
   background-color: #b2c6cb;
