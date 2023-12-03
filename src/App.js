@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import HotCoffeeComponent from "./pages/hotCoffee";
 
 export default function App() {
   const [hotCoffee, setHotCoffee] = useState([]);
@@ -92,21 +93,6 @@ export default function App() {
     </div>
   );
 }
-
-const HotCoffeeComponent = (props) => {
-  const { title, description, image } = props;
-  return (
-    <div className="container" style={{ marginLeft: 10, marginRight: 10 }}>
-      <img className="image" src={image}></img>
-      <br />
-
-      <span className="productName" style={{ fontSize: "large" }}>
-        {title}
-      </span>
-      {/* <span className="description"> {description}</span> */}
-    </div>
-  );
-};
 
 const WineComponent = (props) => {
   const { winery, location, image } = props;
