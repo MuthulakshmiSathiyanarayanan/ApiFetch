@@ -7,8 +7,18 @@ import App from "../App";
 
 export default function MyRouter() {
   return (
-    <>
-      <App />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          {/* <Route index element={<Home />} /> */}
+          <Route path="coffee" element={<HotCoffeeApp />} />
+          <Route path="wine" element={<WineApp />} />
+          <Route path="beer" element={<BeerApp />} />
+          <Route path="games" element={<GamesApp />} />
+          {/*           <Route path="*" element={<NoPage />} />
+           */}{" "}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
