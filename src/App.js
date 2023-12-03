@@ -1,7 +1,5 @@
 import "./App.css";
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { useEffect, useState } from "react";
 import HotCoffeeApp from "./pages/hotCoffee";
 import BeerApp from "./pages/beer";
 import WineApp from "./pages/wine";
