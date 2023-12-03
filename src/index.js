@@ -1,20 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-//import App from "./App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import HotCoffeeApp from "./pages/hotCoffee";
-import BeerApp from "./pages/beer";
-import WineApp from "./pages/wine";
-import GamesApp from "./pages/games";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HotCoffeeApp />
-    <BeerApp />
-    <WineApp />
-    <GamesApp />
+    <App />
   </React.StrictMode>
 );
 
