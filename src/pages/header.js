@@ -6,20 +6,10 @@ export default function Header() {
   return (
     <nav>
       {routingParameter?.map((parameter) => (
-        <RouterComponent
-          path={parameter.path}
-          display={parameter.displayName}
-        />
+        <Link to={parameter.path}>
+          {parameter.displayName} <br />
+        </Link>
       ))}
     </nav>
   );
 }
-const RouterComponent = (props) => {
-  const { path, display } = props;
-  return (
-    <>
-      <Link to={path}>{display} </Link>
-      <br />
-    </>
-  );
-};
