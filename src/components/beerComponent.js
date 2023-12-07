@@ -1,4 +1,4 @@
-const BeerComponent = (props) => {
+function BeerComponent(props) {
   const { name, image } = props;
   return (
     <div className="mydiv" style={{ marginBottom: 100 }}>
@@ -6,5 +6,5 @@ const BeerComponent = (props) => {
       <span className="productName">{name}</span>
     </div>
   );
-};
+}
 export default BeerComponent;

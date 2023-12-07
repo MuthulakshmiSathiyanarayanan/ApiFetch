@@ -4,9 +4,7 @@ const HotCoffeeComponent = (props) => {
     <div className="container" style={{ marginLeft: 10, marginRight: 10 }}>
       <img className="image" src={image}></img>
       <br />
-      <span className="productName" style={{ fontSize: "large" }}>
-        {title}
-      </span>
+      <span style={{ fontSize: "large" }}>{title}</span>
       {/* <span className="description"> {description}</span> */}
     </div>
   );

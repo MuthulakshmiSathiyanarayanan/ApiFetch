@@ -11,7 +11,8 @@ export default function MyRouter() {
       <Routes>
         <Route path="/" element={<App />}>
           {/* <Route index element={<Home />} /> */}
-          <Route path="coffee" element={<HotCoffeeApp />} />
+          <Route path="hotCoffee" element={<HotCoffeeApp />} /> /*higher order
+          component*?
           <Route path="wine" element={<WineApp />} />
           <Route path="beer" element={<BeerApp />} />
           <Route path="games" element={<GamesApp />} />
