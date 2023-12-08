@@ -5,9 +5,16 @@ import HotCoffeeComponent from "../components/hotCoffeeComponent";
 
 export default function HotCoffeeApp() {
   const [hotCoffee, setHotCoffee] = useState([]);
-
+  const [counter, setCounter] = useState(10); //tried a sample  dummy fun for useMemo
+  const [arr, setArr] = useState([1, 2, 35, 3]);
+  function showMax() {
+    console.log("changing arr");
+    return;
+    <>Math.max(...arr)</>;
+  }
+  const memoValue = useMemo(() => showMax(), [arr]); //arr is the dependency but no update fun has been written
   // fetching hotCoffee list
-  const getHotCoffee = async () => {
+  const getHotcoffee = async () => {
     try {
       const apiResp_hotcoffee = await fetch(
         "https://api.sampleapis.com/coffee/hot"
@@ -21,10 +28,9 @@ export default function HotCoffeeApp() {
       console.log("Hot Cofee Api failed-------", err);
     }
   };
-  const memVal = useMemo(() => (async) => getHotCoffee(), [hotCoffee]);
 
   useEffect(() => {
-    getHotCoffee();
+    getHotcoffee();
   }, []);
 
   /* console.log(
@@ -35,7 +41,10 @@ export default function HotCoffeeApp() {
 
   return (
     <div>
-      <>{memVal}</>
+      {/* rendering the dummy functions*/}
+      <button onClick={() => setCounter(counter + 1)}>Counter </button>
+      <span> {counter}</span>
+      <>{memoValue}</>
       <div className="BeverageContainer">
         {hotCoffee?.map((e) => (
           <HotCoffeeComponent {...e} />
