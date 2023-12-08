@@ -17,7 +17,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -38,18 +38,18 @@
   }
 }
 
-.container {
+/* .container {
 
-  /* box-sizing: border-box; */
-  /* width: 1000px; */
+   box-sizing: border-box; 
+   width: 1000px; 
 
-}
+} */
 
-.hotCoffeeContainer {
-  background-color: #bcd3d8;
-
+.BeverageContainer {
+  background-color: #b2c6cb;
+  margin-left: 3%;
   display: flex;
-  flex-direction: row;
+  flex-direction: wrap;
   flex-wrap: wrap;
 }
 
@@ -84,13 +84,39 @@
 .image {
   padding-bottom: 5%;
   padding-top: 5%;
-  /* padding-right: 5%;
-  padding-left: 5%; */
   max-height: 180px;
   max-width: 200px;
   min-height: 180px;
   min-width: 200px;
-  background-color: #aebec2;
+  background-color: #aec0c2;
+  border-radius: 20px;
+  margin-top: 15%;
+}
+
+.beerImage {
+  padding-bottom: 5%;
+  padding-top: 5%;
+  /* padding-right: 5%;
+  padding-left: 5%; */
+  max-height: 180px;
+  max-width: 150px;
+  min-height: 180px;
+  min-width: 150px;
+  background-color: rgb(35, 33, 33);
+  border-radius: 20px;
+  margin-top: 15%;
+}
+
+.wineImage {
+  padding-bottom: 5%;
+  padding-top: 5%;
+  /* padding-right: 5%;
+padding-left: 5%; */
+  max-height: 180px;
+  max-width: 100px;
+  min-height: 180px;
+  min-width: 100px;
+  background-color: #749962;
   border-radius: 20px;
   margin-top: 15%;
 }

@@ -1,0 +1,7 @@
+[
+  { "path": "/", "displayName": "Home" },
+  { "path": "/hotCoffee", "displayName": "HotCoffee" },
+  { "path": "/wine", "displayName": "Wine" },
+  { "path": "/beer", "displayName": "Beer" },
+  { "path": "/games", "displayName": "Games" }
+]
