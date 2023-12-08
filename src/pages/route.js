@@ -12,7 +12,7 @@ export default function MyRouter() {
         <Route path="/" element={<App />}>
           {/* <Route index element={<Home />} /> */}
           <Route path="hotCoffee" element={<HotCoffeeApp />} /> /*higher order
-          component*?
+          component*/
           <Route path="wine" element={<WineApp />} />
           <Route path="beer" element={<BeerApp />} />
           <Route path="games" element={<GamesApp />} />
