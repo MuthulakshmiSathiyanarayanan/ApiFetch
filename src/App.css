@@ -61,7 +61,6 @@
   padding-top: 2%;
   padding-right: 5%;
   padding-left: 5%;
-
   margin-left: 15%;
 
 
@@ -85,9 +84,9 @@
 .coffeeImage {
   padding-bottom: 5%;
   padding-top: 5%;
-  max-width: 200px;
+  max-width: 180px;
   min-height: 180px;
-  min-width: 200px;
+  min-width: 180px;
   max-height: 180px;
   background-color: #aec0c2;
   border-radius: 20px;

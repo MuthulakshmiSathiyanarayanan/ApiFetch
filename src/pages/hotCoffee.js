@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 //import App from "../App";
 import HotCoffeeComponent from "../components/hotCoffeeComponent";
@@ -21,7 +21,6 @@ export default function HotCoffeeApp() {
       console.log("Hot Cofee Api failed-------", err);
     }
   };
-  const memValue = useMemo(() => (async) => getHotCoffee(), [hotCoffee]);
 
   useEffect(() => {
     getHotCoffee();
@@ -35,10 +34,6 @@ export default function HotCoffeeApp() {
 
   return (
     <div>
-      {/*       //rendering the dummy functions 
-      <button onClick={() => setCounter(counter + 1)}>Counter </button>
-      <span> {counter}</span> */}
-      <>{memValue}</>
       <div className="BeverageContainer">
         {hotCoffee?.map((e) => (
           <HotCoffeeComponent {...e} />

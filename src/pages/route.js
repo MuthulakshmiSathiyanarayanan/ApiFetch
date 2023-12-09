@@ -4,8 +4,8 @@ import BeerApp from "./beer";
 import WineApp from "./wine";
 import GamesApp from "./games";
 import App from "../App";
-import SearchBox from "./homeSearch";
-import { useEffect } from "react";
+/* import SearchBox from "./homeSearch"; */
+import DummyMemoFunction from "./homeSearch";
 
 export default function MyRouter() {
   return (
@@ -14,7 +14,8 @@ export default function MyRouter() {
         <Route path="/" element={<App />}>
           {" "}
           //main layout page//
-          <Route index element={<SearchBox />} /> //default home page//
+          {/*  <Route index element={<SearchBox />} /> //default home page// */}
+          <Route index element={<DummyMemoFunction />} />
           <Route path="hotCoffee" element={<HotCoffeeApp />} />
           /*higher order component*/
           <Route path="wine" element={<WineApp />} />
