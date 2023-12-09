@@ -39,12 +39,21 @@
 }
 
 .container {
-
   box-sizing: border-box;
-
   margin-left: 10px;
   margin-right: 10px;
+}
 
+.parentHeader {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-left: 15px;
+  margin-right: 10px;
 }
 
 .BeverageContainer {
@@ -66,9 +75,6 @@
   padding-right: 5%;
   padding-left: 5%;
   margin-left: 15%;
-
-
-
 }
 
 .description {
@@ -79,9 +85,6 @@
   font-weight: 400;
   flex-direction: column;
   word-wrap: 100px;
-
-
-
 }
 
 

@@ -5,10 +5,8 @@ import { SearchBox } from "./headerSearchAndDummyMemo";
 export default function Header() {
   console.log("---RoutParameter", routingParameter);
   return (
-    <div>
-      <nav
-        style={{ display: "flex", flexDirection: "row", gap: 25, margin: 25 }}
-      >
+    <div className="parentHeader">
+      <nav className="header">
         {routingParameter?.map((parameter) => (
           <Link to={parameter.path}>
             {parameter.displayName} <br />

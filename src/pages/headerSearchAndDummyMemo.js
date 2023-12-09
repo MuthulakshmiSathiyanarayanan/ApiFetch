@@ -16,7 +16,7 @@ const SearchBox = () => {
   return (
     <div>
       <input value={query} onChange={handleInputChange} ref={focusElement} />
-      <button className="header">Search</button>
+      <button>Search</button>
     </div>
   );
 };
