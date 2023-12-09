@@ -46,6 +46,7 @@
 
 .parentHeader {
   display: flex;
+  margin-top: 15px;
 }
 
 .header {
@@ -126,4 +127,9 @@ padding-left: 5%; */
   background-color: #749962;
   border-radius: 20px;
   margin-top: 15%;
+}
+
+.memoFun {
+  margin-left: 15px;
+  margin-top: 15px;
 }

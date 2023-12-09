@@ -3,6 +3,7 @@ import "../App.css";
 //import App from "../App";
 import HotCoffeeComponent from "../components/hotCoffeeComponent";
 import api from "../common/json/api.json";
+import SearchHotCoffee from "./searchHotCoffee";
 
 export default function HotCoffeeApp() {
   const [hotCoffee, setHotCoffee] = useState([]);
@@ -33,11 +34,12 @@ export default function HotCoffeeApp() {
 
   return (
     <div>
-      <div className="BeverageContainer">
+      <SearchHotCoffee />
+      {/*  <div className="BeverageContainer">
         {hotCoffee?.map((e) => (
           <HotCoffeeComponent {...e} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

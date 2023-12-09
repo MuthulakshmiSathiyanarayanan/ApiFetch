@@ -30,7 +30,7 @@ const DummyMemoFunction = () => {
   }
   const memoValue = useMemo(() => showMax(), [sampleArray]); //sampleArray is the dependency but no update fun has been written
   return (
-    <div>
+    <div className="memoFun">
       <button onClick={() => setCounter(counter + 1)}>Counter </button>
       <button onClick={() => setSampleArray([...sampleArray, 10 * counter])}>
         {" "}
