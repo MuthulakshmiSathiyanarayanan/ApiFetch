@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../App.css";
 //import App from "../App";
 import HotCoffeeComponent from "../components/hotCoffeeComponent";
+import api from "../common/json/api.json";
 
 export default function HotCoffeeApp() {
   const [hotCoffee, setHotCoffee] = useState([]);
@@ -9,9 +10,7 @@ export default function HotCoffeeApp() {
   // fetching hotCoffee list
   const getHotCoffee = async () => {
     try {
-      const apiResp_hotcoffee = await fetch(
-        "https://api.sampleapis.com/coffee/hot"
-      );
+      const apiResp_hotcoffee = await fetch(api[0]);
       const json_hotCoffeeFetch = await apiResp_hotcoffee.json();
       console.log("-----hotCoffee-------json", json_hotCoffeeFetch);
       setHotCoffee(json_hotCoffeeFetch);
