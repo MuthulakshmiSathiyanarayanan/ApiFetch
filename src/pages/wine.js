@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../App.css";
 import WineComponent from "../components/wineComponent";
 import api from "../common/json/api.json";
+
 export default function WineApp() {
   const [wine, setWine] = useState([]);
 

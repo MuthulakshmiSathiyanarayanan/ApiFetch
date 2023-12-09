@@ -38,12 +38,14 @@
   }
 }
 
-/* .container {
+.container {
 
-   box-sizing: border-box; 
-   width: 1000px; 
+  box-sizing: border-box;
 
-} */
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
 
 .BeverageContainer {
   background-color: #b2c6cb;
@@ -56,6 +58,8 @@
 .productName {
   background-color: rgb(213, 196, 173);
   font-style: italic;
+  font-size: large;
+  font-weight: 500;
   border-radius: 10px;
   padding-bottom: 2%;
   padding-top: 2%;

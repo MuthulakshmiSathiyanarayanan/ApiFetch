@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-
+//header search box to find whether useRef focus works
 const SearchBox = () => {
   const [query, setQuery] = useState("");
   const focusElement = useRef(null);
@@ -20,7 +20,7 @@ const SearchBox = () => {
     </div>
   );
 };
-
+//useMemo hook implementation for a sample function not associated with any of the api fetched pages
 const DummyMemoFunction = () => {
   const [counter, setCounter] = useState(2); //tried a sample  dummy fun for useMemo
   const [sampleArray, setSampleArray] = useState([1, 2, 5, 3]);
