@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-/* const SearchBox = () => {
+const SearchBox = () => {
   const [query, setQuery] = useState("");
   const focusElement = useRef(null);
   console.log(focusElement);
@@ -22,7 +22,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
   );
 };
 
-export default SearchBox; */
+export default SearchBox;
 
 const DummyMemoFunction = () => {
   const [counter, setCounter] = useState(2); //tried a sample  dummy fun for useMemo
@@ -36,6 +36,7 @@ const DummyMemoFunction = () => {
     <div>
       <button onClick={() => setCounter(counter + 1)}>Counter </button>
       <button onClick={() => setSampleArray([...sampleArray, 10 * counter])}>
+        {" "}
         Array
       </button>
       <p>{JSON.stringify(sampleArray)}</p>
@@ -44,4 +45,3 @@ const DummyMemoFunction = () => {
     </div>
   );
 };
-export default DummyMemoFunction;
