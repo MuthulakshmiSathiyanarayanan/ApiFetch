@@ -4,7 +4,7 @@ import BeerApp from "./beer";
 import WineApp from "./wine";
 import GamesApp from "./games";
 import App from "../App";
-import SearchBox from "./homeSearch";
+import { DummyMemoFunction } from "./headerSearchAndDummyMemo";
 
 export default function MyRouter() {
   return (
@@ -13,14 +13,13 @@ export default function MyRouter() {
         <Route path="/" element={<App />}>
           {" "}
           //main layout page//
-          <Route index element={<SearchBox />} /> //default home page//
-          {/*  <Route index element={<DummyMemoFunction />} /> */}
+          <Route index element={<DummyMemoFunction />} /> //default home page
           <Route path="hotCoffee" element={<HotCoffeeApp />} />
           /*higher order component*/
           <Route path="wine" element={<WineApp />} />
           <Route path="beer" element={<BeerApp />} />
           <Route path="games" element={<GamesApp />} />
-          {/*           <Route path="*" element={<NoPage />} />
+          {/*           <Route path="*" element={<NoPage />} /> //for future refernce
            */}{" "}
         </Route>
       </Routes>

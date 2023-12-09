@@ -25,11 +25,11 @@ export default function HotCoffeeApp() {
     getHotCoffee();
   }, []);
 
-  /* console.log(
-    // "-----------hotCoffee--------------",
+  console.log(
+    "-----------hotCoffee--------------",
     hotCoffee.length,
     typeof hotCoffee
-  ); */
+  );
 
   return (
     <div>

@@ -17,12 +17,9 @@ const SearchBox = () => {
     <div>
       <input value={query} onChange={handleInputChange} ref={focusElement} />
       <button className="header">Search</button>
-      <DummyMemoFunction />
     </div>
   );
 };
-
-export default SearchBox;
 
 const DummyMemoFunction = () => {
   const [counter, setCounter] = useState(2); //tried a sample  dummy fun for useMemo
@@ -45,3 +42,4 @@ const DummyMemoFunction = () => {
     </div>
   );
 };
+export { SearchBox, DummyMemoFunction };
