@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 import BeerComponent from "../components/beerComponent";
+import api from "../common/json/api.json";
 
 export default function BeerApp() {
   const [beer, setBeer] = useState([]);
@@ -8,7 +9,7 @@ export default function BeerApp() {
   // fetching beer prices
   const getBeer = async () => {
     try {
-      const resp = await fetch("https://api.sampleapis.com/beers/ale");
+      const resp = await fetch(api[1]);
       const json = await resp.json();
       console.log("-----beer-------json", json);
       //beer = json;

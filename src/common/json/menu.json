@@ -1,5 +1,5 @@
 [
-  { "path": "/", "displayName": "Home" },
+  { "path": "/", "displayName": "Search" },
   { "path": "/hotCoffee", "displayName": "HotCoffee" },
   { "path": "/wine", "displayName": "Wine" },
   { "path": "/beer", "displayName": "Beer" },
