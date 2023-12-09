@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 const SearchHotCoffee = () => {
-  const [searchBoxValue, setSearchBoxValue] = useState("");
+  const [searchBoxValue, setSearchBoxValue] = useState("1");
   const focusElement = useRef(null);
   console.log(focusElement);
 
@@ -11,8 +11,7 @@ const SearchHotCoffee = () => {
   };
 
   const handleSearch = () => {
-    <p>{searchBoxValue}</p>;
-    console.log(searchBoxValue);
+    return <p>{searchBoxValue}</p>;
   };
   useEffect(() => {
     console.log(focusElement);
