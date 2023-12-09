@@ -4,15 +4,19 @@ import BeerApp from "./beer";
 import WineApp from "./wine";
 import GamesApp from "./games";
 import App from "../App";
+import SearchBox from "./homeSearch";
+import { useEffect } from "react";
 
 export default function MyRouter() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          {/* <Route index element={<Home />} /> */}
-          <Route path="hotCoffee" element={<HotCoffeeApp />} /> /*higher order
-          component*/
+          {" "}
+          //main layout page//
+          <Route index element={<SearchBox />} /> //default home page//
+          <Route path="hotCoffee" element={<HotCoffeeApp />} />
+          /*higher order component*/
           <Route path="wine" element={<WineApp />} />
           <Route path="beer" element={<BeerApp />} />
           <Route path="games" element={<GamesApp />} />
