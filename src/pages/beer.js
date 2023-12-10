@@ -17,6 +17,7 @@ export default function BeerApp() {
       console.log("-----beer-------json", json);
       //beer = json;
       setOriginalBeer(json);
+      setBeer(json);
     } catch (err) {
       console.log("Beer Api failed-------", err);
     }

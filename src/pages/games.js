@@ -16,6 +16,7 @@ export default function GamesApp() {
       console.log("-----games-------json", jsonGamesFetch);
       //games = json;
       setOriginalGames(jsonGamesFetch);
+      setGames(jsonGamesFetch);
     } catch (err) {
       console.log("Games Api failed-------", err);
     }
