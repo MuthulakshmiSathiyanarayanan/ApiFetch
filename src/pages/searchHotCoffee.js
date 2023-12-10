@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 const SearchHotCoffee = () => {
-  const [searchBoxValue, setSearchBoxValue] = useState("1");
+  const [searchBoxValue, setSearchBoxValue] = useState("");
   const focusElement = useRef(null);
   console.log(focusElement);
 

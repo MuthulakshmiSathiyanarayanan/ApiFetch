@@ -7,16 +7,8 @@ import api from "../common/json/api.json";
 export default function HotCoffeeApp() {
   const [hotCoffee, setHotCoffee] = useState([]);
   const [originalHotCoffee, setOriginalHotCoffee] = useState([]);
-  const [searchBoxValue, setSearchBoxValue] = useState("");
+  const [searchBoxValue, setSearchBoxValue] = useState("...");
   const inputRef = useRef(null);
-  const handleSearch = () => {
-    const srcValue = inputRef?.current?.value;
-    const searchedValue = originalHotCoffee?.filter(
-      (e) => e?.title?.toLowerCase()?.indexOf(srcValue) !== -1
-    );
-    setHotCoffee(srcValue ? searchedValue : originalHotCoffee);
-    setSearchBoxValue(srcValue);
-  };
 
   // fetching hotCoffee list
   const getHotCoffee = async () => {
@@ -29,26 +21,48 @@ export default function HotCoffeeApp() {
     } catch (err) {
       setHotCoffee({ sorry: "Some Server Errror" });
       alert("Something Error Happened, try after sometime");
-      console.log("Hot Cofee Api failed-------", err);
+      console.log("Hot Coffee Api failed-------", err);
     }
   };
-
+  //use effect to avoid unwanted renderings
   useEffect(() => {
     getHotCoffee();
   }, []);
 
+  //displaying the searched searchBox contents
+  const handleSearch = () => {
+    const srcValue = inputRef?.current?.value;
+    console.log("--srcvalue--", srcValue);
+    const searchedValue = originalHotCoffee?.filter(
+      (element) =>
+        element?.title?.toUpperCase()?.indexOf(srcValue?.toUpperCase()) !== -1
+    );
+    console.log("searchedValue", searchedValue);
+    setHotCoffee(srcValue ? searchedValue : originalHotCoffee);
+    console.log("---basic check--", setHotCoffee);
+    console.log("--checking the setState--", hotCoffee);
+    setSearchBoxValue(srcValue);
+  };
+
+  //console logs for hotCoffee and original hot coffee changes
   console.log(
     "-----------hotCoffee--------------",
     hotCoffee.length,
     typeof hotCoffee
   );
+  console.log("----hotcoffee after search---", hotCoffee);
+  console.log("--original hotcoffee after search---", originalHotCoffee);
 
+  //return statements start
   return (
     <div>
       <input type="text" ref={inputRef} />
+      {/* uncontrolled component- to make it controlled can call value=
+      {searchBoxValue} in input type*/}
       <button onClick={handleSearch}>Search</button>
       <br />
       <span>This is the search result for: {searchBoxValue}</span>
+      <br />
       <div className="BeverageContainer">
         {hotCoffee?.map((e) => (
           <HotCoffeeComponent {...e} />
