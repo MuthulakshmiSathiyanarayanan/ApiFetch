@@ -34,7 +34,7 @@ export default function HotCoffeeApp() {
     const srcValue = inputRef?.current?.value;
     console.log("--srcvalue--", srcValue);
     //Filter operation
-    const searchedValue = originalHotCoffee?.filter(
+    const searchedValue = hotCoffee?.filter(
       (element) =>
         element?.title?.toUpperCase()?.indexOf(srcValue?.toUpperCase()) !== -1
     );
