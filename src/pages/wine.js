@@ -29,6 +29,7 @@ export default function WineApp() {
         element?.winery?.toUpperCase()?.indexOf(srcValue?.toUpperCase()) !== -1
     );
     setWine(srcValue ? searchedValue : originalWine);
+    setSearchBoxValue(srcValue);
   };
 
   return (

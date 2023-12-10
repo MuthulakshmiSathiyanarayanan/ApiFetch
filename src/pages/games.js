@@ -34,6 +34,7 @@ export default function GamesApp() {
         element?.name?.toLowerCase()?.indexOf(srcValue?.toLowerCase()) !== -1
     );
     setGames(srcValue ? searchedValue : originalGames);
+    setSearchBoxValue(srcValue);
   };
   return (
     <div>

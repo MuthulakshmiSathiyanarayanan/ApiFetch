@@ -42,7 +42,7 @@ export default function HotCoffeeApp() {
     setHotCoffee(srcValue ? searchedValue : originalHotCoffee);
     console.log("---basic check--", setHotCoffee);
     console.log("--checking the setState--", hotCoffee);
-    // setSearchBoxValue(srcValue);
+    setSearchBoxValue(srcValue);
   };
 
   //console logs for hotCoffee and original hot coffee changes
