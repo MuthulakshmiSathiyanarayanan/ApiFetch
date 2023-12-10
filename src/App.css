@@ -76,7 +76,10 @@
   padding-right: 2px;
   padding-left: 2px;
   margin-left: 25px;
-  box-sizing: content-box;
+  word-wrap: break-word;
+  max-width: 150px;
+  justify-content: center;
+  display: flex;
 }
 
 .description {
