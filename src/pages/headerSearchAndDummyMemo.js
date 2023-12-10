@@ -21,7 +21,7 @@ const SearchBox = () => {
   );
 };
 //useMemo hook implementation for a sample function not associated with any of the api fetched pages
-const DummyMemoFunction = () => {
+/* const DummyMemoFunction = () => {
   const [counter, setCounter] = useState(2); //tried a sample  dummy fun for useMemo
   const [sampleArray, setSampleArray] = useState([1, 2, 5, 3]);
   function showMax() {
@@ -41,5 +41,5 @@ const DummyMemoFunction = () => {
       <span> {counter}</span>
     </div>
   );
-};
-export { SearchBox, DummyMemoFunction };
+};*/
+export { SearchBox /* DummyMemoFunction */ };
