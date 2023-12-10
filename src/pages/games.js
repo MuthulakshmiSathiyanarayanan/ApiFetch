@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../App.css";
 import GamesComponent from "../components/gamesComponent";
 import api from "../common/json/api.json";
 export default function GamesApp() {
   const [games, setGames] = useState([]);
+  const [originalGames, setOriginalGames] = useState([]);
+  const [searchBoxValue, setSearchBoxValue] = useState("...");
+  const inputRef = useRef(null);
 
   // fetching game types
   const getGames = async () => {
@@ -12,7 +15,7 @@ export default function GamesApp() {
       const jsonGamesFetch = await apiRespGames.json();
       console.log("-----games-------json", jsonGamesFetch);
       //games = json;
-      setGames(jsonGamesFetch);
+      setOriginalGames(jsonGamesFetch);
     } catch (err) {
       console.log("Games Api failed-------", err);
     }
@@ -21,12 +24,26 @@ export default function GamesApp() {
   useEffect(() => {
     getGames();
   }, []);
-
+  //handling search
+  const handleSearch = () => {
+    const srcValue = inputRef?.current?.value;
+    //filtering
+    const searchedValue = originalGames?.filter(
+      (element) =>
+        element?.name?.toLowerCase()?.indexOf(srcValue?.toLowerCase()) !== -1
+    );
+    setGames(srcValue ? searchedValue : originalGames);
+  };
   return (
-    <div className="BeverageContainer">
-      {games?.map((e) => (
-        <GamesComponent {...e} />
-      ))}
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleSearch}>search</button>
+      <span>Search results are: {searchBoxValue}</span>
+      <div>
+        {games?.map((e) => (
+          <GamesComponent {...e} />
+        ))}
+      </div>
     </div>
   );
 }

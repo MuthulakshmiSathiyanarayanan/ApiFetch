@@ -16,7 +16,7 @@ export default function HotCoffeeApp() {
       const apiResp_hotcoffee = await fetch(api[0]);
       const json_hotCoffeeFetch = await apiResp_hotcoffee.json();
       console.log("-----hotCoffee-------json", json_hotCoffeeFetch);
-      setHotCoffee(json_hotCoffeeFetch);
+      // setHotCoffee(json_hotCoffeeFetch);
       setOriginalHotCoffee(json_hotCoffeeFetch);
     } catch (err) {
       setHotCoffee({ sorry: "Some Server Errror" });
@@ -33,6 +33,7 @@ export default function HotCoffeeApp() {
   const handleSearch = () => {
     const srcValue = inputRef?.current?.value;
     console.log("--srcvalue--", srcValue);
+    //Filter operation
     const searchedValue = originalHotCoffee?.filter(
       (element) =>
         element?.title?.toUpperCase()?.indexOf(srcValue?.toUpperCase()) !== -1
@@ -41,7 +42,7 @@ export default function HotCoffeeApp() {
     setHotCoffee(srcValue ? searchedValue : originalHotCoffee);
     console.log("---basic check--", setHotCoffee);
     console.log("--checking the setState--", hotCoffee);
-    setSearchBoxValue(srcValue);
+    // setSearchBoxValue(srcValue);
   };
 
   //console logs for hotCoffee and original hot coffee changes
