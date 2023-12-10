@@ -16,7 +16,7 @@ export default function HotCoffeeApp() {
       const apiResp_hotcoffee = await fetch(api[0]);
       const json_hotCoffeeFetch = await apiResp_hotcoffee.json();
       console.log("-----hotCoffee-------json", json_hotCoffeeFetch);
-      // setHotCoffee(json_hotCoffeeFetch);
+      setHotCoffee(json_hotCoffeeFetch);
       setOriginalHotCoffee(json_hotCoffeeFetch);
     } catch (err) {
       setHotCoffee({ sorry: "Some Server Errror" });

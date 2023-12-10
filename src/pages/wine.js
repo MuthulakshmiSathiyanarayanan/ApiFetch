@@ -13,6 +13,7 @@ export default function WineApp() {
     const apiResp = await fetch(api[2]);
     const respJson = await apiResp.json();
     setOriginalWine(respJson);
+    setWine(respJson);
   };
 
   //useEffect
