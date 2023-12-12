@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import "../App.css";
 import BeerComponent from "../components/beerComponent";
 import api from "../common/json/api.json";
+import { SearchKeyContext } from "../App";
 
 export default function BeerApp() {
   const [beer, setBeer] = useState([]);
   const [originalBeer, setOriginalBeer] = useState([]);
-  const [searchBoxValue, setSearchBoxValue] = useState();
-  const inputRef = useRef(null);
+  const [srcCtxVal, setSrcCtxValue] = useContext(SearchKeyContext);
 
   // fetching beer prices
   const getBeer = async () => {
@@ -26,24 +26,21 @@ export default function BeerApp() {
   useEffect(() => {
     getBeer();
   }, []);
+  useEffect(() => {
+    handleContextSearch();
+  }, [srcCtxVal]);
 
   //handle search
-  const handleSearch = () => {
-    const srcValue = inputRef?.current?.value;
-    const searchedValue = originalBeer?.filter(
+  const handleContextSearch = (defaultValue = originalBeer) => {
+    const searchedValue = defaultValue?.filter(
       (element) =>
-        element?.name?.toUpperCase()?.indexOf(srcValue?.toUpperCase()) !== -1
+        element?.name?.toUpperCase()?.indexOf(srcCtxVal?.toUpperCase()) !== -1
     );
-    setBeer(srcValue ? searchedValue : originalBeer);
-    setSearchBoxValue(srcValue);
+    setBeer(srcCtxVal ? searchedValue : originalBeer);
   };
 
   return (
     <div>
-      <input type="text" ref={inputRef} />
-      <button onClick={handleSearch}>Search</button>
-      <br />
-      <span>This is the search result for: {searchBoxValue}</span>
       <div className="BeverageContainer">
         {beer?.map((e) => (
           <BeerComponent name={e.name} price={e.price} image={e.image} />

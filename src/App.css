@@ -38,32 +38,40 @@
   }
 }
 
-.container {
-  box-sizing: border-box;
-  margin-left: 10px;
+.gamesContainer {
+
+  margin-left: 30px;
   margin-right: 10px;
   margin-top: 20px;
 }
 
 .parentHeader {
   display: flex;
-  margin-top: 15px;
+  background-color: rgb(227, 222, 222);
+  flex-direction: row;
+  margin-left: 25px;
+  margin-right: 10px;
+  height: 40px;
+  gap: 15px;
 }
 
 .header {
   display: flex;
-  flex-direction: row;
-  gap: 15px;
-  margin-left: 15px;
-  margin-right: 10px;
+  gap: 35px;
+
+
 }
 
 .BeverageContainer {
   background-color: #b2c6cb;
-  margin-left: 3%;
+  margin-left: 20px;
+  margin-right: 20px;
   display: flex;
   flex-direction: wrap;
   flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 50px;
+  height: max-content;
 }
 
 .productName {
@@ -83,41 +91,36 @@
   display: flex;
 }
 
-.description {
-  background-color: whitesmoke;
-  width: 100px;
-  height: 100px;
-  white-space: normal;
-  font-weight: 400;
-  flex-direction: column;
-  word-wrap: 100px;
-}
 
 
 .coffeeImage {
-  padding-bottom: 5%;
-  padding-top: 5%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
   max-width: 180px;
   min-height: 180px;
   min-width: 180px;
   max-height: 180px;
-  background-color: #aec0c2;
+  background-color: #f4f9f9;
   border-radius: 20px;
-  margin-top: 15%;
+  margin-top: 15px;
+  margin-left: 35px;
 }
 
 .beerImage {
-  padding-bottom: 5%;
-  padding-top: 5%;
-  /* padding-right: 5%;
-  padding-left: 5%; */
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
   max-height: 180px;
   max-width: 150px;
   min-height: 180px;
   min-width: 150px;
-  background-color: rgb(35, 33, 33);
+  background-color: rgb(35, 23, 23);
   border-radius: 20px;
-  margin-top: 15%;
+  margin-top: 15px;
+  margin-left: 25px;
 }
 
 .wineImage {
@@ -127,11 +130,12 @@
   min-height: 180px;
   min-width: 130px;
   max-height: 180px;
-  background-color: #72a478;
+  background-color: #4a664e;
   border-radius: 20px;
   margin-top: 15px;
   margin-left: 15px;
   margin-right: 15px;
+
 }
 
 .memoFun {
@@ -140,7 +144,7 @@
 }
 
 .bookName {
-  background-color: rgb(236, 203, 157);
+  background-color: rgb(190, 159, 113);
   font-weight: 400;
   border-radius: 5px;
   padding-bottom: 2px;
@@ -150,7 +154,8 @@
   margin-left: 25px;
   word-wrap: break-word;
   max-width: 600px;
-  margin-top: 20px;
+  margin-top: 50px;
+
 
 
 }

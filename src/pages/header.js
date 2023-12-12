@@ -13,7 +13,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-      <SearchBox /> {/* Non-Functional */}
+      <SearchBox />
     </div>
   );
 }
