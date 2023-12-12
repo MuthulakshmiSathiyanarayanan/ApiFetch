@@ -1,12 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import "../App.css";
 import GamesComponent from "../components/gamesComponent";
 import api from "../common/json/api.json";
+import { SearchKeyContext } from "../App";
+
 export default function GamesApp() {
   const [games, setGames] = useState([]);
   const [originalGames, setOriginalGames] = useState([]);
-  const [searchBoxValue, setSearchBoxValue] = useState("...");
-  const inputRef = useRef(null);
+  const [srcCtxVal] = useContext(SearchKeyContext);
 
   // fetching game types
   const getGames = async () => {
@@ -17,30 +18,28 @@ export default function GamesApp() {
       //games = json;
       setOriginalGames(jsonGamesFetch);
       setGames(jsonGamesFetch);
+      handleContextSearch(jsonGamesFetch);
     } catch (err) {
       console.log("Games Api failed-------", err);
     }
   };
-
+  const handleContextSearch = (defaultValue = originalGames) => {
+    const searchedValue = defaultValue?.filter(
+      (element) =>
+        element?.name?.toUpperCase()?.indexOf(srcCtxVal?.toUpperCase()) !== -1
+    );
+    setGames(srcCtxVal ? searchedValue : defaultValue);
+  };
   useEffect(() => {
     getGames();
   }, []);
+  useEffect(() => {
+    handleContextSearch();
+  }, [srcCtxVal]);
   //handling search
-  const handleSearch = () => {
-    const srcValue = inputRef?.current?.value;
-    //filtering
-    const searchedValue = originalGames?.filter(
-      (element) =>
-        element?.name?.toLowerCase()?.indexOf(srcValue?.toLowerCase()) !== -1
-    );
-    setGames(srcValue ? searchedValue : originalGames);
-    setSearchBoxValue(srcValue);
-  };
+
   return (
     <div>
-      <input type="text" ref={inputRef} />
-      <button onClick={handleSearch}>search</button>
-      <span>Search results are: {searchBoxValue}</span>
       <div>
         {games?.map((e) => (
           <GamesComponent {...e} />

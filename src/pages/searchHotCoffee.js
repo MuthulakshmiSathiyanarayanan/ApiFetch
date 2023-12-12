@@ -29,5 +29,3 @@ const SearchHotCoffee = () => {
     </div>
   );
 };
-
-export default SearchHotCoffee;
