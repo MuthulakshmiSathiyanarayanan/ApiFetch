@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import routingParameter from "../common/json/menu.json";
-import { SearchBox } from "./headerSearchAndDummyMemo";
+import SearchBox from "./headerSearchAndDummyMemo";
 
 export default function Header() {
   console.log("---RoutParameter", routingParameter);
@@ -13,7 +13,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-      {/*  <SearchBox /> */}
+      <SearchBox />
     </div>
   );
 }

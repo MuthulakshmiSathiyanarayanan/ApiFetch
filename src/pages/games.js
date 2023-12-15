@@ -34,12 +34,15 @@ export default function GamesApp() {
         element?.name?.toLowerCase()?.indexOf(srcValue?.toLowerCase()) !== -1
     );
     setGames(srcValue ? searchedValue : originalGames);
+    setSearchBoxValue(srcValue);
   };
   return (
     <div>
       <input type="text" ref={inputRef} />
       <button onClick={handleSearch}>search</button>
-      <span>Search results are: {searchBoxValue}</span>
+      <span>
+        Search results are: <b>{searchBoxValue}</b>
+      </span>
       <div>
         {games?.map((e) => (
           <GamesComponent {...e} />

@@ -1,27 +1,31 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
+import { SearchKeyContext } from "../App";
+import { ReactDOM } from "react";
 //header search box to find whether useRef focus works
-const SearchBox = () => {
-  const [query, setQuery] = useState("");
-  const focusElement = useRef(null);
-  console.log(focusElement);
 
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
+const SearchBox = () => {
+  const inputRef = useRef(null);
+  const [globSearch, setGlobSearch] = useContext(SearchKeyContext);
+  const handleSearch = () => {
+    const srcValue = inputRef?.current?.value;
+    setGlobSearch(srcValue);
   };
-  useEffect(() => {
-    console.log(focusElement);
-    focusElement.current.focus();
-  }, []);
 
   return (
-    <div>
-      <input value={query} onChange={handleInputChange} ref={focusElement} />
-      <button>Search</button>
-    </div>
+    <>
+      <div>
+        <input ref={inputRef} />
+        <button onClick={handleSearch}>Search</button>
+      </div>
+      <span>
+        This is the search Result for:<b>{globSearch}</b>
+      </span>
+    </>
   );
 };
+export default SearchBox;
 //useMemo hook implementation for a sample function not associated with any of the api fetched pages
-const DummyMemoFunction = () => {
+/* const DummyMemoFunction = () => {
   const [counter, setCounter] = useState(2); //tried a sample  dummy fun for useMemo
   const [sampleArray, setSampleArray] = useState([1, 2, 5, 3]);
   function showMax() {
@@ -41,5 +45,4 @@ const DummyMemoFunction = () => {
       <span> {counter}</span>
     </div>
   );
-};
-export { SearchBox, DummyMemoFunction };
+}; */

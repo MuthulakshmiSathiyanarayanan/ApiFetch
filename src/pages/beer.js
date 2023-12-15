@@ -35,6 +35,7 @@ export default function BeerApp() {
         element?.name?.toUpperCase()?.indexOf(srcValue?.toUpperCase()) !== -1
     );
     setBeer(srcValue ? searchedValue : originalBeer);
+    setSearchBoxValue(srcValue);
   };
 
   return (
