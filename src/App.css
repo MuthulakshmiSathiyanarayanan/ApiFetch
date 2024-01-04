@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #3574f3;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
@@ -47,8 +47,9 @@
 
 .parentHeader {
   display: flex;
-  background-color: rgb(227, 222, 222);
+  background-color: rgb(205, 227, 243);
   flex-direction: row;
+  margin-top: 25px;
   margin-left: 25px;
   margin-right: 10px;
   height: 40px;
@@ -63,7 +64,7 @@
 }
 
 .BeverageContainer {
-  background-color: #b2c6cb;
+  background-color: #afb2ba;
   margin-left: 20px;
   margin-right: 20px;
   display: flex;
