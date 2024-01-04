@@ -1,13 +1,12 @@
 const GamesComponent = (props) => {
   const { id, genre, name } = props;
   return (
-    <div className="mydiv">
-      <>{id}</>
-      <br></br>
-      <span className="productName">{name}</span>{" "}
-      {genre?.map((e) => (
+    <div className="gamesContainer">
+      <>Book Id: {id}</>
+      <span className="bookName">{name}</span> <br />
+      {/* {genre?.map((e) => (
         <span>{e}</span>
-      ))}
+      ))} */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 const HotCoffeeComponent = (props) => {
   const { title, description, image } = props;
   return (
-    <div className="container">
+    <div>
       <img className="coffeeImage" src={image}></img>
       <br />
       <span className="productName">

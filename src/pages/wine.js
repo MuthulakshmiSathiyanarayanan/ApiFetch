@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import WineComponent from "../components/wineComponent";
+import { SearchKeyContext } from "../App";
 import api from "../common/json/api.json";
 
 export default function WineApp() {
   const [wine, setWine] = useState([]);
   const [originalWine, setOriginalWine] = useState([]);
-  const inputRef = useRef(null);
-  const [searchBoxValue, setSearchBoxValue] = useState();
+  const [srcCtxVal] = useContext(SearchKeyContext);
 
   //fetching Wine
   const getOriginalWine = async () => {
@@ -14,30 +14,30 @@ export default function WineApp() {
     const respJson = await apiResp.json();
     setOriginalWine(respJson);
     setWine(respJson);
-  };
 
+    //search context
+    handleContextSearch(respJson);
+  };
   //useEffect
   useEffect(() => {
     getOriginalWine();
   }, []);
 
+  useEffect(() => {
+    handleContextSearch();
+  }, [srcCtxVal]);
+
   //handle search
-  const handleSearch = () => {
-    const srcValue = inputRef?.current?.value;
-    const searchedValue = originalWine?.filter(
+  const handleContextSearch = (defaultValue = originalWine) => {
+    const searchedValue = defaultValue?.filter(
       (element) =>
-        element?.winery?.toUpperCase()?.indexOf(srcValue?.toUpperCase()) !== -1
+        element?.winery?.toUpperCase()?.indexOf(srcCtxVal?.toUpperCase()) !== -1
     );
-    setWine(srcValue ? searchedValue : originalWine);
+    setWine(srcCtxVal ? searchedValue : defaultValue);
   };
 
   return (
     <div>
-      <input type="text" ref={inputRef} />
-      <button onClick={handleSearch}>Search</button>
-      <br />
-      <span>This is the search result for: {searchBoxValue}</span>
-      <br />
       <div className="BeverageContainer">
         {wine?.map((e) => (
           <WineComponent {...e} />
